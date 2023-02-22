@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://54.180.132.16:5432/postgres?useUnicode=true&characterEncoding=utf8
+    username: postgres
+    password: gamenawa!@#
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
