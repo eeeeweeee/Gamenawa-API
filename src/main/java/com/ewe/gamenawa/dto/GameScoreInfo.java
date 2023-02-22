@@ -12,7 +12,3 @@ public class GameScoreInfo {
     private String steamScore;
     private String metacriticScore;
 }
-
-
-
-
