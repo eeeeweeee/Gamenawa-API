@@ -9,9 +9,9 @@ import java.util.List;
 @Getter
 @Builder
 @AllArgsConstructor
-public class GameListScoreInfo {
+public class GameListResponse {
 
     private long totalCount;
 
-    private List<GameScoreInfo> gameScoreInfoList;
+    private List<GameListItemResponse> gameListItemResponses ;
 }

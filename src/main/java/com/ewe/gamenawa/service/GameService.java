@@ -1,7 +1,7 @@
 package com.ewe.gamenawa.service;
 
-import com.ewe.gamenawa.dto.GameListScoreInfo;
-import com.ewe.gamenawa.dto.GameScoreInfo;
+import com.ewe.gamenawa.dto.GameListResponse;
+import com.ewe.gamenawa.dto.GameListItemResponse;
 import com.ewe.gamenawa.entity.Game;
 import com.ewe.gamenawa.repository.GameRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,13 +17,13 @@ public class GameService {
 
     private final GameRepository gameRepository;
 
-    public GameListScoreInfo getGameScoreInfo(String title, Pageable pageable) {
+    public GameListResponse getGameScoreInfo(String title, Pageable pageable) {
         Page<Game> games = gameRepository.findByNameContaining(title, pageable);
-        return GameListScoreInfo.builder()
+        return GameListResponse.builder()
                 .totalCount(games.getTotalElements())
-                .gameScoreInfoList(
+                .gameListItemResponses(
                     games.getContent().stream()
-                            .map(gameScoreInfo -> new GameScoreInfo(
+                            .map(gameScoreInfo -> new GameListItemResponse(
                                     gameScoreInfo.getId(),
                                     gameScoreInfo.getAppid(),
                                     gameScoreInfo.getName(),

@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class GameScoreInfo {
+public class GameListItemResponse {
     private long id;
     private int appid;
     private String name;
